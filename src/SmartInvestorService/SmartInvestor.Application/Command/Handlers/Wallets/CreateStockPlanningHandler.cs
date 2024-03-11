@@ -34,7 +34,7 @@ namespace SmartInvestor.Application.Command.Handlers.Wallets
 
             stockPlanning.LogoUrl = stock.Logourl;
 
-            var stockAlreadyAdded = wallet.Stocks.FirstOrDefault(s => s.Ticket == request.Ticket);
+            var stockAlreadyAdded = wallet.Stocks.Find(s => s.Ticket == request.Ticket);
 
             if (stockAlreadyAdded != null)
             {

@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace SmartInvestor.Domain.Models
 {
     [ExcludeFromCodeCoverage]
-    public class StockIDetail
+    public class StockDetail
     {
         [JsonProperty("currency")]
         public string Currency { get; set; }

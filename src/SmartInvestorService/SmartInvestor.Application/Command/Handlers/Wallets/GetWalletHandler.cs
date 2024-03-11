@@ -16,7 +16,7 @@ namespace SmartInvestor.Application.Command.Handlers.Wallets
 
         public async Task<GetWalletResponse> Handle(GetWalletRequest request, CancellationToken cancellationToken)
         {
-            var wallet = await _repo.GetWallet(request.UserId, cancellationToken);
+            var wallet = await _repo.GetWallet(request.WalletId, cancellationToken);
 
             return new GetWalletResponse { Wallet = wallet };
         }

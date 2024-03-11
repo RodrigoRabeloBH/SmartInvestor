@@ -7,6 +7,6 @@ namespace SmartInvestor.Application.Command.Requests.Wallets
     [ExcludeFromCodeCoverage]
     public class GetWalletRequest : IRequest<GetWalletResponse>
     {
-        public Guid UserId { get; set; }
+        public Guid WalletId { get; set; }
     }
 }

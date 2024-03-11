@@ -5,7 +5,7 @@ namespace SmartInvestor.Domain.Interfaces
 {
     public interface IBrapiServices
     {
-        Task<StockIDetail> GetStockByTicket(string ticket, CancellationToken cancellationToken);
+        Task<StockDetail> GetStockByTicket(string ticket, CancellationToken cancellationToken);
 
         Task<List<Stock>> GetStocks(QueryParams pagination, CancellationToken cancellationToken);
     }

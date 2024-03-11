@@ -14,7 +14,7 @@ namespace SmartInvestor.Application.Services
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<BrapiServices> _logger;
-        private readonly IRedisRepository<StockIDetail> _stockIDetailCache;
+        private readonly IRedisRepository<StockDetail> _stockIDetailCache;
         private readonly IRedisRepository<List<Stock>> _stockListCache;
 
         private const string ENDPOINT = "/api/quote/";
@@ -22,7 +22,7 @@ namespace SmartInvestor.Application.Services
         private readonly TimeSpan timeToLive = TimeSpan.FromMinutes(30);
 
         public BrapiServices(IHttpClientFactory httpClientFactory, ILogger<BrapiServices> logger,
-            IRedisRepository<StockIDetail> stockIDetailCache, IRedisRepository<List<Stock>> stockListCache)
+            IRedisRepository<StockDetail> stockIDetailCache, IRedisRepository<List<Stock>> stockListCache)
         {
             _httpClientFactory = httpClientFactory;
             _logger = logger;
@@ -30,9 +30,9 @@ namespace SmartInvestor.Application.Services
             _stockListCache = stockListCache;
         }
 
-        public async Task<StockIDetail> GetStockByTicket(string ticket, CancellationToken cancellationToken)
+        public async Task<StockDetail> GetStockByTicket(string ticket, CancellationToken cancellationToken)
         {
-            StockIDetail stockDetail = null;
+            StockDetail stockDetail = null;
 
             try
             {

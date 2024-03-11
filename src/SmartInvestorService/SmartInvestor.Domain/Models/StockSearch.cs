@@ -7,7 +7,7 @@ namespace SmartInvestor.Domain.Models
     public class StockSearch
     {
         [JsonProperty("results")]
-        public List<StockIDetail> Stocks { get; set; }
+        public List<StockDetail> Stocks { get; set; }
 
         [JsonProperty("requestedAt")]
         public DateTime RequestedAt { get; set; }

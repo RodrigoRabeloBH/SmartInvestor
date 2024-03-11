@@ -19,10 +19,10 @@ namespace SmartInvestor.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("{userId}")]
-        public async Task<ActionResult<GetWalletResponse>> GetWaletByUserId(Guid userId)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetWalletResponse>> GetWaletById(Guid id)
         {
-            var request = new GetWalletRequest { UserId = userId };
+            var request = new GetWalletRequest { WalletId = id };
 
             var response = await _mediator.Send(request);
 
@@ -45,7 +45,7 @@ namespace SmartInvestor.Api.Controllers
             var response = await _mediator.Send(request);
 
             if (response.Success)
-                return CreatedAtAction(nameof(GetWaletByUserId), new { response.Wallet.UserId }, response.Wallet);
+                return CreatedAtAction(nameof(GetWaletById), new { response.Wallet.Id }, response.Wallet);
 
             return BadRequest("Could not save changes to the DB");
         }
@@ -59,7 +59,7 @@ namespace SmartInvestor.Api.Controllers
             var response = await _mediator.Send(request);
 
             if (response.Success)
-                return CreatedAtAction(nameof(GetWaletByUserId), new { response.Wallet.UserId }, response.Wallet);
+                return CreatedAtAction(nameof(GetWaletById), new { response.Wallet.Id }, response.Wallet);
 
             return BadRequest("Could not save changes to the DB");
         }

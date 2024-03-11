@@ -6,6 +6,6 @@ namespace SmartInvestor.Application.Command.Responses.Stocks
     [ExcludeFromCodeCoverage]
     public class StockResponse
     {
-        public StockIDetail Stock { get; set; }
+        public StockDetail Stock { get; set; }
     }
 }

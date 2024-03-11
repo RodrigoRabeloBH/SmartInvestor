@@ -13,10 +13,6 @@ namespace SmartInvestor.Application.Mapping
             CreateMap<CreateStockPlanningRequest, StockPlanning>()
                 .ForMember(d => d.CreatedDate, o => o.MapFrom(s => DateTime.UtcNow));
 
-            CreateMap<IncrementStockRequest, StockPlanning>()
-                .ForMember(d => d.CreatedDate, o => o.MapFrom(s => DateTime.UtcNow))
-                .ForMember(d => d.CurrentQuantity, o => o.MapFrom(s => s.Quantity));
-
             CreateMap<UpdateWalletRequest, Wallet>().ReverseMap();
         }
     }

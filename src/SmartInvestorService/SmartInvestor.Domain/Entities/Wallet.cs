@@ -23,7 +23,9 @@ namespace SmartInvestor.Domain.Entities
 
                     stock.CeilingPrice = stock.ProjectedYield / stock.MinimumYieldRequired;
 
-                    stock.TotalAmmountInvested = stock.PurchasePrice * stock.CurrentQuantity;
+                    stock.TotalAmmountInvested = stock.PurchasePrice != 0
+                        ? stock.PurchasePrice * stock.CurrentQuantity
+                        : stock.AveragePrice * stock.CurrentQuantity;
 
                     stock.AveragePrice = stock.CurrentQuantity == 0 ? 0 : stock.TotalAmmountInvested / stock.CurrentQuantity;
 
@@ -31,14 +33,14 @@ namespace SmartInvestor.Domain.Entities
 
                     stock.Buy = stock.CurrentPrice < stock.CeilingPrice && stock.CurrentQuantity < stock.RequiredQuantity;
 
-                    stock.Goal = stock.CurrentQuantity / stock.RequiredQuantity * 100;
-
-                    AmmountInvested = Stocks.Sum(stock => stock.TotalAmmountInvested);
-
-                    CurrentAmmountInvested = Stocks.Sum(s => s.CurrentTotalAmmountInvested);
-
-                    Appreciation = CurrentAmmountInvested == 0 ? 0 : (1 - (AmmountInvested / CurrentAmmountInvested)) * 100;
+                    stock.Goal = stock.RequiredQuantity == 0 ? 0 : stock.CurrentQuantity / stock.RequiredQuantity * 100;
                 }
+
+                AmmountInvested = Stocks.Sum(stock => stock.TotalAmmountInvested);
+
+                CurrentAmmountInvested = Stocks.Sum(s => s.CurrentTotalAmmountInvested);
+
+                Appreciation = CurrentAmmountInvested == 0 ? 0 : (1 - (AmmountInvested / CurrentAmmountInvested)) * 100;
             }
         }
 
@@ -51,8 +53,6 @@ namespace SmartInvestor.Domain.Entities
             stock.AveragePrice = stock.TotalAmmountInvested / stock.CurrentQuantity;
 
             stock.CurrentTotalAmmountInvested = stock.CurrentQuantity * stock.CurrentPrice;
-
-            AmmountInvested = Stocks.Sum(stock => stock.TotalAmmountInvested);
         }
 
         public void DecremetQuantity(int quantity, decimal purchasePrice, StockPlanning stock)
@@ -61,11 +61,11 @@ namespace SmartInvestor.Domain.Entities
 
             stock.CurrentQuantity -= quantity;
 
-            stock.AveragePrice = stock.TotalAmmountInvested / stock.CurrentQuantity;
+            stock.CurrentQuantity = stock.CurrentQuantity <= 0 ? 0 : stock.CurrentQuantity;
+
+            stock.AveragePrice = stock.CurrentQuantity <= 0 ? 0 : stock.TotalAmmountInvested / stock.CurrentQuantity;
 
             stock.CurrentTotalAmmountInvested = stock.CurrentQuantity * stock.CurrentPrice;
-
-            AmmountInvested = Stocks.Sum(stock => stock.TotalAmmountInvested);
         }
     }
 }

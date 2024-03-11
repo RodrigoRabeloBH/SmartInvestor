@@ -3,23 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.Api", "SmartInvestor.Api\SmartInvestor.Api.csproj", "{5E1DFF0D-B949-4039-BA3E-1957B96F271B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartInvestor.Api", "SmartInvestor.Api\SmartInvestor.Api.csproj", "{5E1DFF0D-B949-4039-BA3E-1957B96F271B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.Application", "SmartInvestor.Application\SmartInvestor.Application.csproj", "{DAB096E9-226A-4E1D-821E-E2EDE60129BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartInvestor.Application", "SmartInvestor.Application\SmartInvestor.Application.csproj", "{DAB096E9-226A-4E1D-821E-E2EDE60129BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.CrossCutting", "SmartInvestor.CrossCutting\SmartInvestor.CrossCutting.csproj", "{48E34862-0929-4E88-923E-3232B0BEBF8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartInvestor.CrossCutting", "SmartInvestor.CrossCutting\SmartInvestor.CrossCutting.csproj", "{48E34862-0929-4E88-923E-3232B0BEBF8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.Domain", "SmartInvestor.Domain\SmartInvestor.Domain.csproj", "{114777B5-392D-4F83-8926-150C833F2D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartInvestor.Domain", "SmartInvestor.Domain\SmartInvestor.Domain.csproj", "{114777B5-392D-4F83-8926-150C833F2D54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.Infrastructure", "SmartInvestor.Infrastructure\SmartInvestor.Infrastructure.csproj", "{989E3261-EBF2-41AE-85EB-E8E50BB7AB5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartInvestor.Infrastructure", "SmartInvestor.Infrastructure\SmartInvestor.Infrastructure.csproj", "{989E3261-EBF2-41AE-85EB-E8E50BB7AB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartInvestor.Tests", "SmartInvestor.Tests\SmartInvestor.Tests.csproj", "{D4C80344-4249-46E5-B8E0-F183938F8B04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5E1DFF0D-B949-4039-BA3E-1957B96F271B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +41,15 @@ Global
 		{989E3261-EBF2-41AE-85EB-E8E50BB7AB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{989E3261-EBF2-41AE-85EB-E8E50BB7AB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{989E3261-EBF2-41AE-85EB-E8E50BB7AB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C80344-4249-46E5-B8E0-F183938F8B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C80344-4249-46E5-B8E0-F183938F8B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C80344-4249-46E5-B8E0-F183938F8B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C80344-4249-46E5-B8E0-F183938F8B04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABC45C86-C01A-4346-83C2-3A6838305D99}
 	EndGlobalSection
 EndGlobal

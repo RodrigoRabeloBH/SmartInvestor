@@ -2,3 +2,5 @@ bin
 obj
 .vs
 .vscode
+/src/SmartInvestorService/SmartInvestor.Api/appsettings.Development.json
+/src/SmartInvestorService/SmartInvestor.Api/Properties/launchSettings.json
